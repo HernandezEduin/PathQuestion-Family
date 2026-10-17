@@ -69,8 +69,10 @@ def main() -> int:
         command = [
             sys.executable, str(ROOT / "scripts" / "pathqa_2_kgqa.py"),
             "--source-path", str(UPSTREAM),
-            "--question-path", str(qa_dir),
-            "--triplet-path", str(triplet_dir),
+            # The underlying converter appends /PQ or /PQL itself.
+            # Pass the shared output roots to avoid PQ/PQ and PQL/PQL nesting.
+            "--question-path", str(OUTPUT / "qa"),
+            "--triplet-path", str(OUTPUT / "link_prediction"),
             "--graph-regime", args.graph,
             "--random-seed", str(args.seed),
             "--split-ratio", str(args.split_ratio),
