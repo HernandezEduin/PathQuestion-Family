@@ -1,0 +1,3 @@
+[submodule "external/IRN"]
+	path = external/IRN
+	url = https://github.com/zmtkeke/IRN.git
