@@ -3994,4 +3994,37 @@ if __name__ == "__main__":
             "✅ Saved %s compact evaluation-instance QA to: %s",
             regime,
             mixed_output,
+        )        LOGGER.info(
+            "✅ Saved %s companion QA metadata to: %s",
+            regime,
+            mixed_metadata_output,
         )
+        LOGGER.info(
+            "✅ Saved %s cycle/answer audit to: %s",
+            regime,
+            cycle_answer_audit_output,
+        )
+        if args.encode_ids:
+            LOGGER.info(
+                "✅ Saved shared node/relation mappings in %s",
+                triplet_output_dir,
+            )
+
+    LOGGER.info(
+        "✅ Saved structural family table to: %s",
+        family_output,
+    )
+    LOGGER.info(
+        "✅ Saved released-row family membership audit to: %s",
+        membership_output,
+    )
+    LOGGER.info(
+        "✅ Saved released Path-key -> designated-answer provenance to: %s",
+        path_answer_provenance_path,
+    )
+    if normalization_collision_audit_path is not None:
+        LOGGER.info(
+            "✅ Saved source-normalization collision audit to: %s",
+            normalization_collision_audit_path,
+        )
+    LOGGER.info("✅ Conversion log saved to: %s", log_path)
