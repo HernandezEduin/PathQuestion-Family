@@ -52,6 +52,8 @@ Use `python scripts/reconstruct.py --help` for `--split-ratio` and `--allow-sour
 - `generated/manifests/`: execution provenance and SHA-256 checksums for local reproducibility checks.
 - `generated/source/`: locally extracted PQL source data.
 
+The converter creates the `PQ`/`PQL` directory beneath each output root. Older runs made with the initial wrapper may contain redundant `PQ/PQ` or `PQL/PQL` directories; the corrected wrapper writes directly to `generated/qa/{PQ,PQL}/` and `generated/link_prediction/{PQ,PQL}/`. It does **not** automatically delete or move existing outputs. After backing up or verifying the old run, you can remove the old nested directories and rerun reconstruction to produce the corrected layout.
+
 The converter creates training, development, and test splits **by question family**, stratified within hop counts, to avoid family leakage. The **same split assignment** is used under filtered and source graph conditions. It preserves the original released answer annotations while separately recording graph-consistent answers and paths, rather than silently replacing released supervision.
 
 ### Reproducibility and caveats
