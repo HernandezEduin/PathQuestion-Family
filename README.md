@@ -17,7 +17,7 @@ git clone --recurse-submodules https://github.com/HernandezEduin/PathQuestion-Fa
 cd PathQuestion-Family
 python --version             # recommended: Python 3.12.12
 python -m pip install -r requirements.txt
-python scripts/reconstruct.py --dataset all --graph both --seed 42
+python scripts/reconstruct.py --dataset all --graph both --seed 42 --encode-ids
 ```
 
 All generated files are written under **`generated/`** (ignored by Git). The command reconstructs each dataset's **filtered** (released task-graph) and **source** (original knowledge graph) conditions with the same random seed and family-based data splits.
