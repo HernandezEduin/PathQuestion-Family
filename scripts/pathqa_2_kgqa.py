@@ -997,7 +997,8 @@ def build_question_path_ambiguity_audit(
             ambiguity_types.append("answer-set")
 
         audit_rows.append(
-            {                "Question": question,
+            {
+                "Question": question,
                 "Path-Key": path_key,
                 "Hops": int(hops),
                 "Ambiguity-Types": "+".join(ambiguity_types),
@@ -1996,7 +1997,8 @@ def validate_evaluation_instance_relation_chains(
     )
 
 
-def expand_answers_from_graph(    qa_df: pd.DataFrame,
+def expand_answers_from_graph(
+    qa_df: pd.DataFrame,
     adjacency: Dict[Tuple[str, str], Set[str]],
     regime: str,
 ) -> pd.DataFrame:
@@ -2995,7 +2997,8 @@ if __name__ == "__main__":
             "Question",
             "Source-Entity",
             "Designated-Answer-Entity",
-            "Path-Key",            "Hops",
+            "Path-Key",
+            "Hops",
             "Annotated-Entity-Sequence",
             "Annotated-Path-Simple",
             "Annotated-Path-Backtracks",
@@ -3994,7 +3997,8 @@ if __name__ == "__main__":
             "✅ Saved %s compact evaluation-instance QA to: %s",
             regime,
             mixed_output,
-        )        LOGGER.info(
+        )
+        LOGGER.info(
             "✅ Saved %s companion QA metadata to: %s",
             regime,
             mixed_metadata_output,
